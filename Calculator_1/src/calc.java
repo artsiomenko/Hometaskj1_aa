@@ -1,40 +1,23 @@
 import java.util.Scanner;
-//Это калькуляторчик для сложения, вычитания, умножения и деления двух целых чисел!!!
-public class calc
-{
+//Р­С‚Рѕ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂС‡РёРє РґР»СЏ СЃР»РѕР¶РµРЅРёСЏ, РІС‹С‡РёС‚Р°РЅРёСЏ, СѓРјРЅРѕР¶РµРЅРёСЏ Рё РґРµР»РµРЅРёСЏ РґРІСѓС… С†РµР»С‹С… С‡РёСЃРµР»!!!
 
-	public static void main(String[] args)
-	{
+public class calc {
+
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Введите первое число: ");
+		System.out.println("Р’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ: ");
 		int num1 = sc.nextInt();
-		System.out.println("Введите нужный вам знак (+, -, *, /): ");
+		System.out.println("Р’РІРµРґРёС‚Рµ РЅСѓР¶РЅС‹Р№ РІР°Рј Р·РЅР°Рє (+, -, *, /): ");
 		String sg = sc.next();
-		System.out.println("Введите второе число: ");
+		System.out.println("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ: ");
 		int num2 = sc.nextInt();
-		sc.close();
-      System.out.println("Результат выражения равен:" + Signs.metodSigns(num1, sg, num2));  
-	}
-
-}
-class Signs
-{
-	public static int metodSigns(int num1, String sg, int num2)
-	{
-		int eq = 0;
-		switch (sg)
-		{
-		case "+": eq= num1 + num2;
-		break;
-		case "-": eq= num1 - num2;
-		break;
-		case "*": eq= num1 * num2;
-		break;
-		case "/": eq= num1 / num2;
-		break;
+		if ( num2 == 0 ) {
+			System.out.println("Division by zero is fobbiden! Please enter another humber! ");
+			System.out.println("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ: ");
+			num2 = sc.nextInt();
 		}
-		return eq;
+		sc.close();
+		System.out.println("Р РµР·СѓР»СЊС‚Р°С‚ РІС‹СЂР°Р¶РµРЅРёСЏ СЂР°РІРµРЅ:" + Signs.metodSigns(num1, sg, num2));
 	}
+
 }
-
-
